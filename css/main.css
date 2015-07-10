@@ -1,0 +1,33 @@
+h2 {
+	font-size: 250%;
+	margin-top: 25px;
+}
+tr {
+	height: 50px;
+}
+th {
+	background-color: black;
+	color: white;
+	padding: 10px 10px;
+	font-size: 18px;
+	min-width: 125px;
+}
+td {
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px 10px;
+}
+body > table > tbody > tr > td:nth-child(1) {
+	min-width: 150px;
+}
+a {
+	text-decoration: none;
+}
+th a {
+	color: white;
+}
+input {
+	width: 250px;
+	height: 40px;
+	padding: 8px;
+}

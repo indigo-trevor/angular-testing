@@ -1,0 +1,100 @@
+<html data-ng-app="appMain">
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+</head>
+<body data-ng-controller="homePageViewModel">
+
+<!-- <input type='text' ng-model='name'>
+<p>Hello <b style='color: red;'>{{ name }}</b></p> -->
+<h2>{{ headingCaption }}</h2>
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search companies" ng-model="searchCompanies">
+      </div>      
+    </div>
+  </form>
+<table>
+	<thead>
+		<tr>
+			<th>
+				<a href="#" ng-click="sortType = 'cName'; sortReverse = !sortReverse">
+	            Company
+	            <span ng-show="sortType == 'cName' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'cName' && sortReverse" class="fa fa-caret-up"></span>
+	          </a>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'sent'; sortReverse = !sortReverse">
+	          	Page sent
+	            <span ng-show="sortType == 'sent' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'sent' && sortReverse" class="fa fa-caret-up"></span>
+	          </a>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'timeSpent'; sortReverse = !sortReverse">
+	          	Time on page
+	            <span ng-show="sortType == 'timeSpent' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'timeSpent' && sortReverse" class="fa fa-caret-up"></span>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'calcResults'; sortReverse = !sortReverse">
+	          	Calc results
+	            <span ng-show="sortType == 'calcResults' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'calcResults' && sortReverse" class="fa fa-caret-up"></span>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'trialCreated'; sortReverse = !sortReverse">
+	          	Trial created
+	            <span ng-show="sortType == 'trialCreated' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'trialCreated' && sortReverse" class="fa fa-caret-up"></span>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'otherUsers'; sortReverse = !sortReverse">
+	          	Other users
+	            <span ng-show="sortType == 'otherUsers' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'otherUsers' && sortReverse" class="fa fa-caret-up"></span>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'lastSeen'; sortReverse = !sortReverse">
+	          	Last seen
+	            <span ng-show="sortType == 'lastSeen' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'lastSeen' && sortReverse" class="fa fa-caret-up"></span>
+			</th>
+			<th>
+				<a href="#" ng-click="sortType = 'engagement'; sortReverse = !sortReverse">
+	          	Engagement
+	            <span ng-show="sortType == 'engagement' && !sortReverse" class="fa fa-caret-down"></span>
+	            <span ng-show="sortType == 'engagement' && sortReverse" class="fa fa-caret-up"></span>
+			</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat="c in companies | orderBy:sortType:sortReverse | filter:searchCompanies">
+		<tr>
+			<td><a href="#" ng-click="showCompanies(c)">{{ c.cName }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.sent }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.timeSpent }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.calcResults }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.trialCreated }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.otherUsers }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.lastSeen }}</a></td>
+			<td> <a href="#" ng-click="showCompanies(c)">{{ c.engagement }}</a></td>
+		</tr>
+	</tbody>
+
+</table>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+
+<!-- Angular  -->
+<script src="js/angular.min.js"></script>
+
+<!-- Custom JS -->
+<script src="js/App.js"></script>
+
+</body>
+</html>
